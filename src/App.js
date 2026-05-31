@@ -14,7 +14,6 @@ export default function App() {
 
   return (
     <div className="root">
-      {/* ── HEADER ── */}
       <header className="header">
         <div className="header-inner">
           <img
@@ -38,9 +37,7 @@ export default function App() {
         </div>
       </header>
 
-      {/* ── MAIN ── */}
       <main className="main">
-        {/* HERO */}
         <div className="hero">
           <img
             className="hero-bg"
@@ -49,44 +46,22 @@ export default function App() {
           />
           <div className="hero-overlay" />
           <div className="hero-content">
-            <p className="hero-eyebrow">OFFRE EXCLUSIVE</p>
             <h1 className="hero-title">VICTORY<br />VAULT</h1>
-            <p className="hero-sub">Comptes Fortnite premium · Livraison instantanée</p>
           </div>
         </div>
 
-        {/* PRODUCT CARD */}
         <section className="section">
           <div className="card">
-            {/* LEFT */}
             <div className="card-left">
               <div className="badge-row">
                 <span className="badge badge-legendary">★ LÉGENDAIRE</span>
                 <span className="badge badge-hot">🔥 BEST-SELLER</span>
               </div>
-
               <h2 className="card-title">COMPTE<br />FORTNITE</h2>
-
-              <ul className="features">
-                {[
-                  { icon: "🎮", text: "Compte vérifié & sécurisé" },
-                  { icon: "📧", text: "Livraison immédiate par email" },
-                  { icon: "💎", text: "Skins & cosmétiques inclus" },
-                  { icon: "🛡️", text: "Garantie satisfaction" },
-                  { icon: "⚡", text: "Support disponible 24/7" },
-                ].map((f) => (
-                  <li key={f.text} className="feature-item">
-                    <span className="feature-icon">{f.icon}</span>
-                    {f.text}
-                  </li>
-                ))}
-              </ul>
-
               <div className="price-row">
                 <span className="price-label">Prix</span>
-                <span className="price">19,99 €</span>
+                <span className="price">50,00 €</span>
               </div>
-
               <a
                 href="https://payhip.com/b/UqdAF"
                 className="payhip-buy-button buy-btn"
@@ -95,11 +70,9 @@ export default function App() {
               >
                 🛒&nbsp;&nbsp;ACHETER MAINTENANT
               </a>
-
               <p className="secure-note">🔒 Paiement 100% sécurisé via Payhip</p>
             </div>
 
-            {/* RIGHT */}
             <div className="card-right">
               <div className="img-frame">
                 <div className="img-glow" />
@@ -111,21 +84,6 @@ export default function App() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* TRUST BADGES */}
-        <section className="trust-row">
-          {[
-            { icon: "⚡", label: "Livraison instantanée" },
-            { icon: "🔐", label: "100% sécurisé" },
-            { icon: "✅", label: "Compte garanti" },
-            { icon: "🌍", label: "Disponible partout" },
-          ].map((t) => (
-            <div key={t.label} className="trust-item">
-              <span className="trust-icon">{t.icon}</span>
-              <span className="trust-label">{t.label}</span>
-            </div>
-          ))}
         </section>
       </main>
 
