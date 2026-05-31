@@ -449,6 +449,48 @@
     .faq-a-inner{padding:0 22px 18px}
     .faq-item.open .faq-a{max-height:260px}
 
+    /* ── DISCORD BTN ──────────────────────────────────── */
+    .btn-discord{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#5865F2;
+      color:#fff;font-family:'Poppins',sans-serif;
+      font-size:.78rem;font-weight:700;
+      padding:8px 16px;border-radius:8px;
+      border:none;cursor:pointer;transition:.25s;
+      letter-spacing:.04em;
+    }
+    .btn-discord:hover{background:#4752c4;transform:translateY(-2px);box-shadow:0 6px 20px rgba(88,101,242,.4)}
+    .btn-discord i{font-size:.95rem}
+    .footer-discord{
+      display:flex;flex-direction:column;align-items:center;gap:10px;
+    }
+    .footer-discord p{font-size:.8rem;color:var(--muted)}
+
+    /* ── PROCESS BOX (dans FAQ) ───────────────────────── */
+    .process-box{
+      background:rgba(108,77,255,.08);
+      border:1px solid rgba(108,77,255,.3);
+      border-radius:12px;
+      padding:16px 18px;
+      margin-top:12px;
+      display:flex;flex-direction:column;gap:10px;
+    }
+    .process-step{
+      display:flex;align-items:flex-start;gap:12px;
+      font-size:.82rem;color:var(--muted);line-height:1.55;
+    }
+    .step-num{
+      min-width:22px;height:22px;
+      background:var(--v);border-radius:50%;
+      font-size:.65rem;font-weight:800;color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      flex-shrink:0;margin-top:1px;
+    }
+    .process-step strong{color:#fff}
+    .discord-inline{
+      color:#8b9cf7;font-weight:700;
+    }
+
     /* ── FOOTER ───────────────────────────────────────── */
     .footer{
       background:rgba(5,9,26,.98);
@@ -542,6 +584,10 @@
       <a href="#boutique" class="cart-btn" title="Panier">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-badge">1</span>
+      </a>
+      <a href="https://discord.gg/bqxDsw7VV2" class="btn-discord" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-discord"></i>
+        Discord
       </a>
       <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -686,8 +732,16 @@
     </div>
     <div class="faq-list">
       <div class="faq-item reveal">
-        <button class="faq-q">Comment fonctionne la livraison ? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Après confirmation du paiement, vous recevrez immédiatement les identifiants de votre compte Fortnite par e-mail. La livraison est automatique et instantanée.</div></div>
+        <button class="faq-q">Comment recevoir mon compte après l'achat ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Après le paiement, Payhip vous génère un <strong>code de commande unique</strong>. Suivez les étapes ci-dessous pour recevoir votre compte rapidement.
+          <div class="process-box">
+            <div class="process-step"><span class="step-num">1</span><div><strong>Payez sur Payhip</strong> — cliquez sur "Acheter Maintenant" et finalisez votre achat.</div></div>
+            <div class="process-step"><span class="step-num">2</span><div><strong>Notez votre code de commande</strong> — Payhip vous envoie un e-mail de confirmation avec un numéro de commande unique.</div></div>
+            <div class="process-step"><span class="step-num">3</span><div><strong>Rejoignez notre Discord</strong> — rendez-vous sur <a href="https://discord.gg/bqxDsw7VV2" target="_blank" class="discord-inline">discord.gg/bqxDsw7VV2</a> et ouvrez un ticket.</div></div>
+            <div class="process-step"><span class="step-num">4</span><div><strong>Envoyez votre code</strong> — partagez votre code de commande dans le ticket. On vérifie et on vous livre votre compte immédiatement.</div></div>
+          </div>
+        </div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q">Les comptes sont-ils sécurisés ? <i class="fas fa-chevron-down"></i></button>
@@ -699,11 +753,11 @@
       </div>
       <div class="faq-item reveal">
         <button class="faq-q">Puis-je modifier l'e-mail du compte ? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Oui, une fois le compte en votre possession vous pouvez modifier l'adresse e-mail associée. Notre support est là pour vous guider dans cette démarche.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Oui, une fois le compte en votre possession vous pouvez modifier l'adresse e-mail associée. Notre support sur Discord est là pour vous guider dans cette démarche.</div></div>
       </div>
       <div class="faq-item reveal">
         <button class="faq-q">Comment contacter le support ? <i class="fas fa-chevron-down"></i></button>
-        <div class="faq-a"><div class="faq-a-inner">Notre support est disponible 24h/24 et 7j/7. Contactez-nous directement après votre achat via Payhip ou via la section Contact de ce site.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">Notre support est disponible 24h/24 et 7j/7 sur notre serveur Discord : <a href="https://discord.gg/bqxDsw7VV2" target="_blank" class="discord-inline">discord.gg/bqxDsw7VV2</a>. Rejoignez-nous et ouvrez un ticket, on vous répond rapidement.</div></div>
       </div>
     </div>
   </div>
