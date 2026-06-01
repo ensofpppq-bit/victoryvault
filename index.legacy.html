@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="NOVA LOOT – Boutique premium de comptes Fortnite rares et sécurisés. Livraison instantanée, paiement sécurisé."/>
+  <title>NOVA LOOT – Comptes Fortnite Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Poppins',sans-serif;background:#070D22;color:#fff;overflow-x:hidden;line-height:1.6}
+    a{text-decoration:none;color:inherit}
+    ul{list-style:none}
+    img{display:block;max-width:100%}
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#070D22}
+    ::-webkit-scrollbar-thumb{background:#6C4DFF;border-radius:3px}
+    :root{
+      --bg:#070D22;--bg2:#0A1030;
+      --v:#6C4DFF;--vl:#8B5CFF;--vg:rgba(108,77,255,.3);
+      --muted:#AAB0D0;--border:rgba(108,77,255,.2);--max:1400px;
+    }
+
+    /* ── HEADER ── */
+    .header{position:sticky;top:0;z-index:1000;background:rgba(7,13,34,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .header-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:68px;gap:20px}
+    .logo{display:flex;flex-direction:column;line-height:1}
+    .logo-name{font-size:1.6rem;font-weight:900;letter-spacing:.06em}
+    .logo-name .nova{color:#fff}.logo-name .loot{color:var(--v)}
+    .logo-sub{font-size:.58rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-top:2px}
+    nav.main-nav{display:flex;align-items:center;gap:4px}
+    nav.main-nav a{font-size:.84rem;font-weight:500;color:var(--muted);padding:7px 13px;border-radius:8px;transition:.25s;position:relative}
+    nav.main-nav a::after{content:'';position:absolute;bottom:3px;left:50%;transform:translateX(-50%) scaleX(0);width:55%;height:2px;background:var(--v);border-radius:2px;transition:transform .25s}
+    nav.main-nav a:hover{color:#fff}
+    nav.main-nav a:hover::after{transform:translateX(-50%) scaleX(1)}
+    nav.main-nav a.active{color:#fff;background:rgba(108,77,255,.12)}
+    nav.main-nav a.active::after{transform:translateX(-50%) scaleX(1)}
+    .header-right{display:flex;align-items:center;gap:10px}
+    .hicon{display:flex;align-items:center;gap:6px;font-size:.75rem;font-weight:500;color:var(--muted);background:rgba(108,77,255,.08);border:1px solid var(--border);border-radius:8px;padding:7px 12px;transition:.25s}
+    .hicon i{font-size:.9rem}
+    .hicon:hover{color:#fff;border-color:var(--v);background:rgba(108,77,255,.18)}
+    .cart-btn{position:relative;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(108,77,255,.1);border:1px solid var(--border);border-radius:8px;color:var(--muted);font-size:.95rem;transition:.25s}
+    .cart-btn:hover{color:#fff;border-color:var(--v);background:rgba(108,77,255,.22)}
+    .cart-badge{position:absolute;top:-5px;right:-5px;width:17px;height:17px;background:var(--v);border-radius:50%;font-size:.6rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+    .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:.3s}
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .mobile-nav{display:none;flex-direction:column;gap:4px;padding:14px 20px 18px;border-top:1px solid var(--border);background:rgba(7,13,34,.98)}
+    .mobile-nav.open{display:flex}
+    .mobile-nav a{font-size:.9rem;font-weight:500;color:var(--muted);padding:10px 14px;border-radius:8px;transition:.25s}
+    .mobile-nav a:hover,.mobile-nav a.active{color:#fff;background:rgba(108,77,255,.15)}
+    .btn-discord{display:inline-flex;align-items:center;gap:8px;background:#5865F2;color:#fff;font-family:'Poppins',sans-serif;font-size:.78rem;font-weight:700;padding:8px 16px;border-radius:8px;border:none;cursor:pointer;transition:.25s;letter-spacing:.04em}
+    .btn-discord:hover{background:#4752c4;transform:translateY(-2px);box-shadow:0 6px 20px rgba(88,101,242,.4)}
+    .btn-discord i{font-size:.95rem}
+
+    /* ── HERO ── */
+    .hero{position:relative;min-height:calc(100vh - 68px);display:flex;align-items:center;overflow:hidden;background:#070D22}
+    .hero-bg{position:absolute;inset:0;z-index:0}
+    .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:right center;display:block}
+    .hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,13,34,.97) 0%,rgba(7,13,34,.88) 35%,rgba(7,13,34,.45) 60%,rgba(7,13,34,.1) 80%,transparent 100%)}
+    .hero-content{position:relative;z-index:2;width:100%;max-width:var(--max);margin:0 auto;padding:80px 28px 80px 60px;display:flex;flex-direction:column;align-items:flex-start}
+    .hero-content-inner{max-width:560px;display:flex;flex-direction:column;gap:28px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(108,77,255,.18);border:1px solid rgba(108,77,255,.45);color:var(--vl);font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:7px 15px;border-radius:100px;width:fit-content}
+    .hero-badge .dot{width:6px;height:6px;background:var(--vl);border-radius:50%;animation:blink 1.4s infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+    .hero-title{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:900;line-height:1.06;letter-spacing:-.02em}
+    .hero-title .accent{color:var(--v)}
+    .hero-desc{font-size:.97rem;color:var(--muted);max-width:520px;line-height:1.75}
+    .hero-perks{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+    .perk{display:flex;align-items:center;gap:9px;font-size:.82rem;font-weight:600;color:#fff}
+    .perk i{color:var(--vl);font-size:.9rem}
+    .perk span{font-size:.72rem;color:var(--muted);font-weight:400}
+    .btn-hero{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--v) 0%,var(--vl) 100%);color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:17px 40px;border-radius:100px;border:none;cursor:pointer;width:fit-content;position:relative;overflow:hidden;transition:.3s cubic-bezier(.4,0,.2,1);box-shadow:0 8px 32px var(--vg)}
+    .btn-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 60%);opacity:0;transition:.3s}
+    .btn-hero:hover{transform:translateY(-3px);box-shadow:0 14px 44px var(--vg)}
+    .btn-hero:hover::after{opacity:1}
+    .btn-hero i{font-size:.85rem}
+
+    /* ── BOUTIQUE ── */
+    .products{padding:100px 0 90px;position:relative}
+    .section-head{text-align:center;margin-bottom:56px}
+    .section-head h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+    .underline{width:56px;height:3px;background:linear-gradient(90deg,var(--v),var(--vl));border-radius:2px;margin:14px auto 0}
+    .products-grid{max-width:var(--max);margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+
+    /* ── CARTE PRODUIT ── */
+    .product-card{background:var(--bg2);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;transition:.35s;position:relative;cursor:pointer}
+    .product-card::before{content:'';position:absolute;inset:0;border-radius:18px;background:linear-gradient(135deg,rgba(108,77,255,.07) 0%,transparent 55%);pointer-events:none;z-index:0}
+    .product-card:hover{transform:translateY(-6px);border-color:rgba(108,77,255,.5);box-shadow:0 24px 64px rgba(0,0,0,.5),0 0 48px rgba(108,77,255,.14)}
+    .prod-img{position:relative;background:#060c20;width:100%;aspect-ratio:16/9;overflow:hidden;flex-shrink:0}
+    .prod-img img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .6s ease}
+    .product-card:hover .prod-img img{transform:scale(1.05)}
+    .prod-tag{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--v),var(--vl));color:#fff;font-size:.58rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:4px 11px;border-radius:100px;z-index:1}
+    /* Badge "Voir les skins" au survol */
+    .prod-img-overlay{
+      position:absolute;inset:0;z-index:2;
+      background:rgba(7,13,34,.55);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;transition:opacity .3s;
+      pointer-events:none;
+    }
+    .product-card:hover .prod-img-overlay{opacity:1}
+    .prod-img-overlay span{
+      background:linear-gradient(135deg,var(--v),var(--vl));
+      color:#fff;font-size:.7rem;font-weight:800;
+      letter-spacing:.12em;text-transform:uppercase;
+      padding:9px 20px;border-radius:100px;
+      display:flex;align-items:center;gap:8px;
+    }
+    .prod-info{padding:18px 18px 20px;display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;flex:1}
+    .prod-name{font-size:.95rem;font-weight:800;letter-spacing:-.01em;line-height:1.3}
+    .prod-features{display:flex;flex-direction:column;gap:6px}
+    .prod-features li{display:flex;align-items:center;gap:8px;font-size:.73rem;color:var(--muted)}
+    .prod-features li::before{content:'';width:5px;height:5px;background:var(--v);border-radius:50%;flex-shrink:0}
+    .prod-price-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .prod-price{font-size:1.6rem;font-weight:900;color:var(--vl);letter-spacing:-.03em}
+    .avail-tag{font-size:.6rem;font-weight:700;color:#4ede9e;background:rgba(78,222,158,.12);border:1px solid rgba(78,222,158,.3);padding:3px 9px;border-radius:100px;letter-spacing:.08em;text-transform:uppercase}
+    .btn-buy{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--v) 0%,var(--vl) 100%);color:#fff;font-family:'Poppins',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:13px 18px;border-radius:100px;border:none;cursor:pointer;position:relative;overflow:hidden;transition:.3s;box-shadow:0 6px 22px var(--vg);text-decoration:none;margin-top:auto}
+    .btn-buy::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 60%);opacity:0;transition:.3s}
+    .btn-buy:hover{transform:translateY(-3px);box-shadow:0 12px 36px var(--vg)}
+    .btn-buy:hover::after{opacity:1}
+    .secure-row{display:flex;align-items:center;gap:6px;font-size:.62rem;color:var(--muted)}
+    .secure-row i{color:#4ede9e;font-size:.7rem}
+
+    /* ══════════════════════════════════════════
+       MODALE GALERIE
+    ══════════════════════════════════════════ */
+    .modal-overlay{
+      position:fixed;inset:0;z-index:9000;
+      background:rgba(4,7,20,.92);
+      backdrop-filter:blur(14px);
+      display:flex;align-items:center;justify-content:center;
+      opacity:0;pointer-events:none;
+      transition:opacity .3s ease;
+      padding:20px;
+    }
+    .modal-overlay.open{opacity:1;pointer-events:all}
+
+    .modal{
+      background:#0A1030;
+      border:1px solid rgba(108,77,255,.3);
+      border-radius:24px;
+      width:100%;max-width:900px;
+      max-height:90vh;
+      display:flex;flex-direction:column;
+      overflow:hidden;
+      transform:scale(.94) translateY(20px);
+      transition:transform .35s cubic-bezier(.4,0,.2,1);
+      position:relative;
+    }
+    .modal-overlay.open .modal{transform:scale(1) translateY(0)}
+
+    /* Header modale */
+    .modal-head{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:20px 24px 16px;
+      border-bottom:1px solid rgba(108,77,255,.15);
+      flex-shrink:0;
+    }
+    .modal-title{font-size:1.05rem;font-weight:800;letter-spacing:-.01em}
+    .modal-subtitle{font-size:.72rem;color:var(--muted);margin-top:2px}
+    .modal-close{
+      width:36px;height:36px;border-radius:50%;
+      background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+      color:#fff;font-size:.9rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:.2s;flex-shrink:0;
+    }
+    .modal-close:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.25)}
+
+    /* Image principale */
+    .modal-main-img{
+      width:100%;aspect-ratio:16/9;
+      background:#060c20;flex-shrink:0;
+      position:relative;overflow:hidden;
+    }
+    .modal-main-img img{
+      width:100%;height:100%;object-fit:cover;
+      transition:opacity .25s;
+    }
+
+    /* Boutons prev / next */
+    .modal-nav{
+      position:absolute;top:50%;transform:translateY(-50%);
+      width:40px;height:40px;border-radius:50%;
+      background:rgba(7,13,34,.7);border:1px solid rgba(108,77,255,.4);
+      color:#fff;font-size:.9rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;
+      transition:.2s;z-index:2;
+    }
+    .modal-nav:hover{background:var(--v);border-color:var(--v)}
+    .modal-nav.prev{left:12px}
+    .modal-nav.next{right:12px}
+
+    /* Compteur */
+    .modal-counter{
+      position:absolute;bottom:10px;right:14px;
+      font-size:.68rem;font-weight:700;color:#fff;
+      background:rgba(7,13,34,.65);
+      padding:3px 10px;border-radius:100px;
+      letter-spacing:.06em;
+    }
+
+    /* Miniatures */
+    .modal-thumbs{
+      display:flex;gap:8px;padding:14px 20px;
+      overflow-x:auto;flex-shrink:0;
+      border-top:1px solid rgba(108,77,255,.1);
+      scrollbar-width:thin;scrollbar-color:var(--v) transparent;
+    }
+    .modal-thumbs::-webkit-scrollbar{height:3px}
+    .modal-thumbs::-webkit-scrollbar-thumb{background:var(--v);border-radius:2px}
+    .modal-thumb{
+      flex-shrink:0;width:80px;height:52px;
+      border-radius:8px;overflow:hidden;
+      border:2px solid transparent;cursor:pointer;
+      transition:.2s;opacity:.55;
+    }
+    .modal-thumb img{width:100%;height:100%;object-fit:cover}
+    .modal-thumb:hover{opacity:.85}
+    .modal-thumb.active{border-color:var(--v);opacity:1}
+
+    /* Footer modale */
+    .modal-foot{
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 24px;
+      border-top:1px solid rgba(108,77,255,.15);
+      flex-shrink:0;gap:12px;flex-wrap:wrap;
+    }
+    .modal-price{font-size:1.6rem;font-weight:900;color:var(--vl);letter-spacing:-.03em}
+    .modal-price-label{font-size:.65rem;color:var(--muted);margin-bottom:2px}
+    .btn-modal-buy{
+      display:inline-flex;align-items:center;gap:9px;
+      background:linear-gradient(135deg,var(--v) 0%,var(--vl) 100%);
+      color:#fff;font-family:'Poppins',sans-serif;
+      font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+      padding:14px 28px;border-radius:100px;border:none;cursor:pointer;
+      transition:.3s;box-shadow:0 8px 28px var(--vg);text-decoration:none;
+      position:relative;overflow:hidden;
+    }
+    .btn-modal-buy::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.18) 0%,transparent 60%);opacity:0;transition:.3s}
+    .btn-modal-buy:hover{transform:translateY(-2px);box-shadow:0 14px 40px var(--vg)}
+    .btn-modal-buy:hover::after{opacity:1}
+    .modal-secure{font-size:.64rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+    .modal-secure i{color:#4ede9e}
+
+    /* ── FAQ ── */
+    .faq{padding:90px 0}
+    .faq-inner{max-width:780px;margin:0 auto;padding:0 28px}
+    .faq-list{display:flex;flex-direction:column;gap:12px}
+    .faq-item{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+    .faq-q{width:100%;background:none;border:none;color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;font-weight:600;text-align:left;padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;transition:.25s}
+    .faq-q:hover{color:var(--vl)}
+    .faq-q i{font-size:.78rem;color:var(--v);transition:transform .3s;flex-shrink:0}
+    .faq-item.open .faq-q i{transform:rotate(180deg)}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1);font-size:.83rem;color:var(--muted);line-height:1.75}
+    .faq-a-inner{padding:0 22px 18px}
+    .faq-item.open .faq-a{max-height:300px}
+    .process-box{background:rgba(108,77,255,.08);border:1px solid rgba(108,77,255,.3);border-radius:12px;padding:16px 18px;margin-top:12px;display:flex;flex-direction:column;gap:10px}
+    .process-step{display:flex;align-items:flex-start;gap:12px;font-size:.82rem;color:var(--muted);line-height:1.55}
+    .step-num{min-width:22px;height:22px;background:var(--v);border-radius:50%;font-size:.65rem;font-weight:800;color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+    .process-step strong{color:#fff}
+    .discord-inline{color:#8b9cf7;font-weight:700}
+
+    /* ── FOOTER ── */
+    .footer{background:rgba(5,9,26,.98);border-top:1px solid var(--border);padding:48px 0 30px}
+    .footer-inner{max-width:var(--max);margin:0 auto;padding:0 28px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+    .footer-logo{font-size:1.35rem;font-weight:900;letter-spacing:.08em}
+    .footer-logo .nova{color:#fff}.footer-logo .loot{color:var(--v)}
+    .footer-pays{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .pay-chip{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;padding:6px 13px;font-size:.7rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+    .footer-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:center}
+    .footer-links a{font-size:.78rem;color:var(--muted);transition:.25s}
+    .footer-links a:hover{color:var(--vl)}
+    .footer-links .sep{color:var(--border)}
+    .footer-copy{font-size:.72rem;color:rgba(170,176,208,.4)}
+
+    /* ── REVEAL ── */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    /* ── RESPONSIVE ── */
+    @media(max-width:1100px){.products-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:768px){
+      nav.main-nav{display:none}
+      .hamburger{display:flex}
+      .hicon .label{display:none}
+      .hero-content{padding:60px 20px}
+      .hero-title{font-size:2rem}
+      .products-grid{grid-template-columns:repeat(2,1fr);padding:0 16px;gap:14px}
+      .modal{border-radius:16px}
+      .modal-thumb{width:60px;height:40px}
+    }
+    @media(max-width:480px){
+      .products-grid{grid-template-columns:1fr}
+      .hero-overlay{background:linear-gradient(180deg,rgba(7,13,34,.96) 0%,rgba(7,13,34,.85) 60%,rgba(7,13,34,.7) 100%)}
+      .modal-foot{flex-direction:column;align-items:stretch}
+      .btn-modal-buy{justify-content:center}
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ MODALE GALERIE ════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal" id="modal">
+    <div class="modal-head">
+      <div>
+        <div class="modal-title" id="modal-title">Compte Fortnite Premium</div>
+        <div class="modal-subtitle" id="modal-subtitle">Contenu du compte — skins, emotes, accessoires</div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Fermer"><i class="fas fa-xmark"></i></button>
+    </div>
+    <div class="modal-main-img">
+      <img src="" id="modal-main-img" alt=""/>
+      <button class="modal-nav prev" id="modal-prev" aria-label="Précédent"><i class="fas fa-chevron-left"></i></button>
+      <button class="modal-nav next" id="modal-next" aria-label="Suivant"><i class="fas fa-chevron-right"></i></button>
+      <div class="modal-counter" id="modal-counter">1 / 1</div>
+    </div>
+    <div class="modal-thumbs" id="modal-thumbs"></div>
+    <div class="modal-foot">
+      <div>
+        <div class="modal-price-label">Prix du compte</div>
+        <div class="modal-price" id="modal-price">50,00 €</div>
+        <div class="modal-secure"><i class="fas fa-lock"></i> Paiement sécurisé · Livraison instantanée</div>
+      </div>
+      <a href="#" id="modal-buy-btn" class="btn-modal-buy" target="_blank" rel="noopener noreferrer">
+        <i class="fas fa-bolt"></i> Acheter Maintenant
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ HEADER ════════════════════════════════════ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <span class="logo-name"><span class="nova">NOVA </span><span class="loot">LOOT</span></span>
+      <span class="logo-sub">Comptes Fortnite Premium</span>
+    </a>
+    <nav class="main-nav">
+      <a href="#" class="active">Accueil</a>
+      <a href="#boutique">Boutique</a>
+    </nav>
+    <div class="header-right">
+      <a href="#boutique" class="hicon"><i class="fas fa-lock"></i><span class="label">Paiement sécurisé</span></a>
+      <a href="#boutique" class="cart-btn" title="Panier"><i class="fas fa-shopping-cart"></i><span class="cart-badge">1</span></a>
+      <a href="https://discord.gg/bqxDsw7VV2" class="btn-discord" target="_blank" rel="noopener noreferrer"><i class="fab fa-discord"></i>Discord</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#" class="active">Accueil</a>
+    <a href="#boutique">Boutique</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- ══ HERO ══════════════════════════════════════ -->
+<section class="hero" id="accueil">
+  <div class="hero-bg">
+    <img src="https://raw.githubusercontent.com/ensofpppq-bit/victoryvault/main/ChatGPT%20Image%2031%20mai%202026%2C%2022_17_46.png" alt="Hero Banner Nova Loot"/>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-content-inner">
+      <span class="hero-badge"><span class="dot"></span>Comptes Fortnite Premium</span>
+      <h1 class="hero-title">Des comptes Fortnite<br><span class="accent">Rares</span> et Sécurisés</h1>
+      <p class="hero-desc">Accédez à des skins exclusifs et objets rares grâce à nos comptes Fortnite premium soigneusement sélectionnés.</p>
+      <div class="hero-perks">
+        <div class="perk"><i class="fas fa-shield-halved"></i><div><div>100% Sécurisé</div><span>Comptes vérifiés</span></div></div>
+        <div class="perk"><i class="fas fa-bolt"></i><div><div>Livraison Instantanée</div><span>Accès immédiat</span></div></div>
+        <div class="perk"><i class="fas fa-headset"></i><div><div>Support 24/7</div><span>Nous sommes là</span></div></div>
+      </div>
+      <a href="#boutique" class="btn-hero">Voir les Comptes <i class="fas fa-chevron-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BOUTIQUE ══════════════════════════════════ -->
+<section class="products" id="boutique">
+  <div style="max-width:var(--max);margin:0 auto;padding:0 28px">
+    <div class="section-head reveal">
+      <h2>👑 Comptes Disponibles</h2>
+      <div class="underline"></div>
+    </div>
+  </div>
+
+  <!--
+    ══════════════════════════════════════════════
+    GRILLE PRODUITS
+    Pour ajouter un produit : colle une .product-card ici.
+    Attributs de la carte :
+      data-title   = nom du produit (affiché dans la modale)
+      data-price   = prix affiché dans la modale
+      data-buy     = lien Payhip
+      data-gallery = URLs des images séparées par |
+                     (la 1ère image = miniature de la carte)
+    ══════════════════════════════════════════════
+  -->
+  <div class="products-grid" id="products-grid">
+
+    <!-- ══ PRODUIT 1 ══ -->
+    <div class="product-card reveal"
+      data-title="Compte Fortnite Premium"
+      data-price="50,00 €"
+      data-buy="https://payhip.com/b/UqdAF"
+      data-gallery="https://cdn.discordapp.com/attachments/1510282054497992784/1510663285568180316/ima1ge.png?ex=6a1da252&is=6a1c50d2&hm=fc099057e8738a5176e8dc066742b8c82571463a9cb585c1d45473e7e3c63266&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663283906969681/fd.png?ex=6a1da251&is=6a1c50d1&hm=9032fa90af13cab76b692582aaa14c23fca7868b92c89f95f188787c01cab01f&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663284259426384/fdf.png?ex=6a1da251&is=6a1c50d1&hm=a7ce210a59ea7c49fa2dc294d7063c1c53edc2888469abae4a19ba71950c2ec6&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663284796293190/gg.png?ex=6a1da251&is=6a1c50d1&hm=7cb831ebf37d64ff6542c32e0fe7d850a3974646ad458ac3a13e3f34b44c6f71&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663285081374782/i.png?ex=6a1da251&is=6a1c50d1&hm=302b45d27f0e70eff1535d93a33f758a516837689a2e088df3b23abe3296dd5f&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663286209777835/image.png?ex=6a1da252&is=6a1c50d2&hm=3f2605c83ee95223781adfb037ef03985903701efa97e01bca1c36c6b6904ed2&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663286595518504/l.png?ex=6a1da252&is=6a1c50d2&hm=b3fa1fad37ba5ef3a8a99b727ae89d71e2ab599e2cfa4ff4317863558ac240eb&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663287178661909/lk.png?ex=6a1da252&is=6a1c50d2&hm=97041f4100ab07eff8b45d3639e9dcde0a2db3eca0b33e3ec24d48e40f4e3927&|https://cdn.discordapp.com/attachments/1510282054497992784/1510663287581179914/qs.png?ex=6a1da252&is=6a1c50d2&hm=b93e31963831f5fc3c53a2bfc29eddc33fdf44e8f41df19531b19612d16694d3&">
+      <div class="prod-img">
+        <span class="prod-tag">Premium</span>
+        <img src="https://raw.githubusercontent.com/ensofpppq-bit/victoryvault/main/ChatGPT%20Image%2031%20mai%202026%2C%2021_31_38.png" alt="Compte Fortnite Premium"/>
+        <div class="prod-img-overlay"><span><i class="fas fa-images"></i> Voir les skins</span></div>
+      </div>
+      <div class="prod-info">
+        <h3 class="prod-name">Compte Fortnite Premium</h3>
+        <ul class="prod-features">
+          <li>Compte Fortnite premium</li>
+          <li>Accès immédiat après achat</li>
+          <li>Compte vérifié manuellement</li>
+          <li>Livraison rapide garantie</li>
+        </ul>
+        <div class="prod-price-row">
+          <span class="prod-price">50,00&nbsp;€</span>
+          <span class="avail-tag">Disponible</span>
+        </div>
+        <a href="https://payhip.com/b/UqdAF" class="btn-buy" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+          <i class="fas fa-bolt"></i> Acheter Maintenant
+        </a>
+        <div class="secure-row"><i class="fas fa-lock"></i> Paiement 100% sécurisé · Livraison instantanée</div>
+      </div>
+    </div>
+
+    <!-- ══ COLLE TES NOUVELLES CARTES ICI ══ -->
+    <div class="product-card reveal"
+  data-title="Compte Fortnite Normal"
+  data-price="10 €"
+  data-buy="https://payhip.com/b/tJ9F1"
+  data-gallery="https://cdn.discordapp.com/attachments/1510282053579571200/1510704501596618803/skin.png?ex=6a1dc8b4&is=6a1c7734&hm=692131ca5fb16b8ee59e0d7f128bae1008e6646cdb1881f9b54b4d2f92d3c16b&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704502024568922/skin2.png?ex=6a1dc8b4&is=6a1c7734&hm=a7a11f146b63d75954b43dcbe0907db7e842ce22e1eb26ecc20651f58a3dd096&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704498178392115/emote2.png?ex=6a1dc8b3&is=6a1c7733&hm=92c4157e7f5129efc1b77c2409a89a7cb8d672668715ede7eba984f5e11d6c90&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704498765598740/pioche3.png?ex=6a1dc8b4&is=6a1c7734&hm=a7a26861c094dbfc2a7cc9db34f4af3fbe04386e8d3014a29847eaca443b6a48&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704499163922545/pioche4.png?ex=6a1dc8b4&is=6a1c7734&hm=b5736a705f8108a4aa03f3dfd95dec328c6dd5d2d927e4868c12fd22d50bc054&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704499705118941/pioche5.png?ex=6a1dc8b4&is=6a1c7734&hm=993733b9d136004833eba6537a75b6ad63a9114aebf03b9840cc47e29e574857&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704500170690560/sac1.png?ex=6a1dc8b4&is=6a1c7734&hm=798aa2b4d1f0f70b1f839200cebeaaf530ef79e4e586ff9a1150f67790b44757&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704500556431593/sac2.png?ex=6a1dc8b4&is=6a1c7734&hm=f49bc77d2375af227a2a6863867e28bf483a40cde9bc8fb7d0123ef727199d2a&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704501143765042/sac3.png?ex=6a1dc8b4&is=6a1c7734&hm=7928003481682b08eec6e28a6ec9cd02d4aff830312bc07df2c04aaba58aada7&|https://cdn.discordapp.com/attachments/1510282053579571200/1510704502464974988/emote1.png?ex=6a1dc8b4&is=6a1c7734&hm=b5e185b9f091762696701e23a7b489c0bd1b88f68c9725946a5e5d0e0cd2b9b5&">
+      <div class="prod-img">
+    <span class="prod-tag">Soldé</span>
+    <img src="https://raw.githubusercontent.com/ensofpppq-bit/victoryvault/refs/heads/main/ChatGPT%20Image%2031%20mai%202026%2C%2022_50_16.png" alt="Compte Fortnite Normal"/>
+    <div class="prod-img-overlay"><span><i class="fas fa-images"></i> Voir les skins</span></div>
+  </div>
+  <div class="prod-info">
+    <h3 class="prod-name">Compte Fortnite Normal</h3>
+    <ul class="prod-features">
+          <li>Compte Fortnite Normal</li>
+          <li>Accès immédiat après achat</li>
+          <li>Compte vérifié manuellement</li>
+          <li>Livraison rapide garantie</li>
+    </ul>
+    <div class="prod-price-row">
+      <span class="prod-price">10&nbsp;€</span>
+      <span class="avail-tag">Disponible</span>
+    </div>
+    <a href="https://payhip.com/b/tJ9F1" class="btn-buy" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+      <i class="fas fa-bolt"></i>
+      Acheter Maintenant
+    </a>
+    <div class="secure-row">
+      <i class="fas fa-lock"></i>
+      Paiement 100% sécurisé · Livraison instantanée
+    </div>
+  </div>
+</div>
+
+   <div class="product-card reveal"
+  data-title="Compte Fortnite Normal"
+  data-price="10 €"
+  data-buy="https://payhip.com/b/m7kF2"
+  data-gallery="https://cdn.discordapp.com/attachments/1510282053579571200/1510705928268415096/sac2.png?ex=6a1dca08&is=6a1c7888&hm=8adba1ca8f3a9364b1c074764e1d052044f9dcf0bcaf089c17b5ec2692c26eea&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705928591245352/sac3.png?ex=6a1dca08&is=6a1c7888&hm=80b37c09c34e6cceb005ab57ce1426eac6d5df8cb8f27c39dcb0ab2ad25ca3f5&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705928918269982/sac4.png?ex=6a1dca09&is=6a1c7889&hm=ca5b4d18cf8a8d476e5413d6a3812894756bc8b9b213985b980714d8f2dec8be&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705929191034981/sac5.png?ex=6a1dca09&is=6a1c7889&hm=24527605fc072e5c342ae0d86749773ebdf5af16aae3c441c14574c839b835ea&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705929560264774/skin1.png?ex=6a1dca09&is=6a1c7889&hm=b064091978522105cbd30b1e2e7938406ffa1abcd6b80c73078bbee766c6da25&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705929887416411/skin2.png?ex=6a1dca09&is=6a1c7889&hm=384c5c41b77a2dabc3e06d45ce877dfa63ef0b1ff0a0c5689cbd9a96a60cc5ea&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705930252062824/voiture.png?ex=6a1dca09&is=6a1c7889&hm=0dbe955e09cd7026047a78e2745af8978d4c1c74a0b40a148ad8c617ad53fab4&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705930671751361/planeur1.png?ex=6a1dca09&is=6a1c7889&hm=f6526ad2e1e5d65a42ebe69e99f03583fe88f6d666d2329334ce9635065f7676&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705931099439285/planeur3.png?ex=6a1dca09&is=6a1c7889&hm=79f2c46a4df66cde2baaebcc603cdf812aff6106b4470bdeb78dacead3ee3938&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705931506155520/sac1.png?ex=6a1dca09&is=6a1c7889&hm=bcb8e2fb06834f05f0c7bd3205c2f4d0629c38ceaaff278488df8358848e6948&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705908517306479/pioche1.png?ex=6a1dca04&is=6a1c7884&hm=75373bfef00a763a42ee888b1536ea49e345d7a1b8f0a3841ab886ac8aab1b02&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705908878020651/pioche2.png?ex=6a1dca04&is=6a1c7884&hm=06c3d6fc11cf9c1f07158a7edc85a3abf490bdad83022d021035f087454bdcf9&|https://cdn.discordapp.com/attachments/1510282053579571200/1510705909238857950/pioche3.png?ex=6a1dca04&is=6a1c7884&hm=b88477c2cee1473332814e80df9631b790cda4495449cc402c93fa3f5a9528b4&">
+  <div class="prod-img">
+    <span class="prod-tag">Soldé</span>
+    <img src="https://raw.githubusercontent.com/ensofpppq-bit/victoryvault/refs/heads/main/ChatGPT%20Image%2031%20mai%202026%2C%2023_20_49.png" alt="Compte Fortnite Normal"/>
+    <div class="prod-img-overlay"><span><i class="fas fa-images"></i> Voir les skins</span></div>
+  </div>
+  <div class="prod-info">
+    <h3 class="prod-name">Compte Fortnite Normal</h3>
+    <ul class="prod-features">
+          <li>Compte Fortnite Normal</li>
+          <li>Accès immédiat après achat</li>
+          <li>Compte vérifié manuellement</li>
+          <li>Livraison rapide garantie</li>
+    </ul>
+    <div class="prod-price-row">
+      <span class="prod-price">10&nbsp;€</span>
+      <span class="avail-tag">Disponible</span>
+    </div>
+    <a href="https://payhip.com/b/m7kF2" class="btn-buy" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+      <i class="fas fa-bolt"></i>
+      Acheter Maintenant
+    </a>
+    <div class="secure-row">
+      <i class="fas fa-lock"></i>
+      Paiement 100% sécurisé · Livraison instantanée
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <div class="product-card reveal"
+  data-title="Compte Fortnite Petit"
+  data-price="5 €"
+  data-buy="https://payhip.com/b/4dBrj"
+  data-gallery="https://cdn.discordapp.com/attachments/1510282055718801568/1510705099217834115/emote.png?ex=6a1dc943&is=6a1c77c3&hm=704ffecc5fd35edb71443f2d9f2f92ead9183a03de8736acb91ff74e247d7bb8&|https://cdn.discordapp.com/attachments/1510282055718801568/1510705099868082296/pioche.png?ex=6a1dc943&is=6a1c77c3&hm=15a50d4c0bff87f566e738c955dc98a22a59ed4f86e2b82e6c099d4261a7f8c6&|https://cdn.discordapp.com/attachments/1510282055718801568/1510705100488835192/planneur.png?ex=6a1dc943&is=6a1c77c3&hm=6e71b2b77b2c75fb6b600d3a1cef6308d26f0d6d71c57b60bccb4ad3ce66e842&|https://cdn.discordapp.com/attachments/1510282055718801568/1510705100966854767/sac.png?ex=6a1dc943&is=6a1c77c3&hm=074967dc2ee06ffb839663cbc2c04865b7ee9aef09d80f84a05c5edd09fea7d6&|https://cdn.discordapp.com/attachments/1510282055718801568/1510705101441077258/skin.png?ex=6a1dc943&is=6a1c77c3&hm=87bcbd259b54a6a600691995e8dad1dba8dc45ebc363617741475597092c4e07&">
+  <div class="prod-img">
+    <span class="prod-tag">Soldé</span>
+    <img src="https://raw.githubusercontent.com/ensofpppq-bit/victoryvault/refs/heads/main/ChatGPT%20Image%2031%20mai%202026%2C%2023_31_20.png" alt="Compte Fortnite Petit"/>
+    <div class="prod-img-overlay"><span><i class="fas fa-images"></i> Voir les skins</span></div>
+  </div>
+  <div class="prod-info">
+    <h3 class="prod-name">Compte Fortnite Petit</h3>
+    <ul class="prod-features">
+          <li>Compte Fortnite Petit</li>
+          <li>Accès immédiat après achat</li>
+          <li>Compte vérifié manuellement</li>
+          <li>Livraison rapide garantie</li>
+    </ul>
+    <div class="prod-price-row">
+      <span class="prod-price">5&nbsp;€</span>
+      <span class="avail-tag">Disponible</span>
+    </div>
+    <a href="https://payhip.com/b/4dBrj" class="btn-buy" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+      <i class="fas fa-bolt"></i>
+      Acheter Maintenant
+    </a>
+    <div class="secure-row">
+      <i class="fas fa-lock"></i>
+      Paiement 100% sécurisé · Livraison instantanée
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+    
+</div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════ -->
+<section class="faq" id="faq">
+  <div class="faq-inner">
+    <div class="section-head reveal" style="margin-bottom:40px">
+      <h2>Questions Fréquentes</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q">Comment recevoir mon compte après l'achat ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          Après le paiement, Payhip vous génère un <strong>code de commande unique</strong>. Suivez les étapes ci-dessous.
+          <div class="process-box">
+            <div class="process-step"><span class="step-num">1</span><div><strong>Payez sur Payhip</strong> — cliquez sur "Acheter Maintenant" et finalisez votre achat.</div></div>
+            <div class="process-step"><span class="step-num">2</span><div><strong>Notez votre code de commande</strong> — Payhip vous envoie un e-mail avec un numéro unique.</div></div>
+            <div class="process-step"><span class="step-num">3</span><div><strong>Rejoignez notre Discord</strong> — <a href="https://discord.gg/bqxDsw7VV2" target="_blank" class="discord-inline">discord.gg/bqxDsw7VV2</a> et ouvrez un ticket.</div></div>
+            <div class="process-step"><span class="step-num">4</span><div><strong>Envoyez votre code</strong> — on vérifie et on vous livre votre compte immédiatement.</div></div>
+          </div>
+        </div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Les comptes sont-ils sécurisés ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">Oui, chaque compte est vérifié manuellement avant la mise en vente.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Quels moyens de paiement acceptez-vous ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">Carte bancaire (Visa, Mastercard) et PayPal via Payhip.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Puis-je modifier l'e-mail du compte ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">Oui, notre support Discord vous guide dans cette démarche.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Comment contacter le support ? <i class="fas fa-chevron-down"></i></button>
+        <div class="faq-a"><div class="faq-a-inner">Sur Discord 24/7 : <a href="https://discord.gg/bqxDsw7VV2" target="_blank" class="discord-inline">discord.gg/bqxDsw7VV2</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer class="footer" id="contact">
+  <div class="footer-inner">
+    <span class="footer-logo"><span class="nova">NOVA </span><span class="loot">LOOT</span></span>
+    <div class="footer-pays">
+      <div class="pay-chip"><i class="fab fa-cc-visa"></i> Visa</div>
+      <div class="pay-chip"><i class="fab fa-cc-mastercard"></i> Mastercard</div>
+      <div class="pay-chip"><i class="fab fa-cc-paypal"></i> PayPal</div>
+    </div>
+    <div class="footer-links">
+      <a href="#">Conditions d'utilisation</a><span class="sep">·</span>
+      <a href="#">Politique de confidentialité</a><span class="sep">·</span>
+      <a href="#contact">Contact</a>
+    </div>
+    <p class="footer-copy">© 2026 NOVA LOOT – Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+/* ══ HAMBURGER ══ */
+const ham = document.getElementById('hamburger');
+const mob = document.getElementById('mobile-nav');
+ham.addEventListener('click', () => {
+  const o = ham.classList.toggle('open');
+  mob.classList.toggle('open', o);
+  ham.setAttribute('aria-expanded', o);
+});
+mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  ham.classList.remove('open'); mob.classList.remove('open');
+  ham.setAttribute('aria-expanded', false);
+}));
+
+/* ══ FAQ ══ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => {
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+/* ══ REVEAL ══ */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const siblings = entry.target.parentElement.querySelectorAll('.reveal');
+      siblings.forEach((el, idx) => { setTimeout(() => el.classList.add('in'), idx * 100); });
+      obs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ══ NAV ACTIVE ══ */
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll', () => {
+  let cur = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) cur = s.id; });
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.remove('active');
+    if (a.getAttribute('href') === '#' + cur) a.classList.add('active');
+  });
+}, { passive: true });
+
+/* ══ MODALE GALERIE ══ */
+const overlay   = document.getElementById('modal-overlay');
+const modalMain = document.getElementById('modal-main-img');
+const modalTitle= document.getElementById('modal-title');
+const modalPrice= document.getElementById('modal-price');
+const modalBuy  = document.getElementById('modal-buy-btn');
+const thumbsEl  = document.getElementById('modal-thumbs');
+const counter   = document.getElementById('modal-counter');
+let imgs = [], cur = 0;
+
+function openModal(card) {
+  const gallery = card.dataset.gallery || '';
+  imgs = gallery.split('|').map(s => s.trim()).filter(Boolean);
+  if (!imgs.length) return;
+
+  modalTitle.textContent = card.dataset.title || 'Compte Fortnite';
+  modalPrice.textContent = card.dataset.price || '—';
+  modalBuy.href = card.dataset.buy || '#';
+
+  // Miniatures
+  thumbsEl.innerHTML = '';
+  imgs.forEach((url, i) => {
+    const t = document.createElement('div');
+    t.className = 'modal-thumb' + (i === 0 ? ' active' : '');
+    t.innerHTML = '<img src="' + url + '" loading="lazy"/>';
+    t.addEventListener('click', () => goTo(i));
+    thumbsEl.appendChild(t);
+  });
+
+  goTo(0);
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function goTo(index) {
+  cur = (index + imgs.length) % imgs.length;
+  modalMain.src = imgs[cur];
+  counter.textContent = (cur + 1) + ' / ' + imgs.length;
+  thumbsEl.querySelectorAll('.modal-thumb').forEach((t, i) => {
+    t.classList.toggle('active', i === cur);
+  });
+  // Scroll la miniature active en vue
+  const activeThumb = thumbsEl.querySelectorAll('.modal-thumb')[cur];
+  if (activeThumb) activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { modalMain.src = ''; imgs = []; }, 350);
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-prev').addEventListener('click', () => goTo(cur - 1));
+document.getElementById('modal-next').addEventListener('click', () => goTo(cur + 1));
+
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+
+document.addEventListener('keydown', e => {
+  if (!overlay.classList.contains('open')) return;
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowLeft') goTo(cur - 1);
+  if (e.key === 'ArrowRight') goTo(cur + 1);
+});
+
+// Clic sur les cartes produit
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', () => {
+    if (card.dataset.gallery) openModal(card);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --color-nova-bg: #070d22;
+  --color-nova-bg2: #0a1030;
+  --color-nova-violet: #6c4dff;
+  --color-nova-violet-light: #8b5cff;
+  --color-nova-muted: #aab0d0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-nova-bg font-sans text-white antialiased;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #070d22;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #6c4dff;
+    border-radius: 3px;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-violet-400 to-violet-300 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply border border-violet-500/20 bg-nova-bg/80 backdrop-blur-xl;
+  }
+
+  .glow-violet {
+    box-shadow:
+      0 0 60px rgba(108, 77, 255, 0.15),
+      0 8px 32px rgba(108, 77, 255, 0.2);
+  }
+}
